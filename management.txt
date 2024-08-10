@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+struct Student {
+    char name[60];
+    int rollnumber;
+    int age;
+};
+
+int main() {
+    Student student[] = {
+        {"Alice", 101, 18},
+        {"Bob", 102, 19},
+        {"Charlie", 103, 17},
+        {"David", 104, +20}
+    };
+    
+    int troll;
+    cin >> troll;
+    bool flag = false;
+
+    for (int i = 0; i < 4; i++) {
+        if (student[i].rollnumber == troll) {
+            cout << "Student found:" << endl;
+            cout << "Name: " << student[i].name << endl;
+            cout << "Roll Number: " << student[i].rollnumber << endl;
+            cout << "Age: " << student[i].age << endl;
+            flag = true;
+            break; 
+        }
+    }
+
+    if (!flag) {
+        cout << "Student with roll number " << troll << " not found in the database." << endl;
+    }
+    
+    return 0;
+}
